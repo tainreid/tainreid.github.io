@@ -20,51 +20,49 @@
     header {
       background-color: #ffffff;
       color: black;
-      padding: 25px 20px 0px;
+      padding: 20px 20px 0px;
     }
 
     header h1 {
       margin: 0;
       font-size: 4rem;
-      line-height: 1;
-    }
-
-    .tight-heading {
-      margin-top: 0;
     }
 
     header p {
-      margin-top: 0px;
-      font-size: 1rem;
+      margin-top: -20px;
+      font-size: 0.7rem;
       opacity: 0.8;
     }
+	
+	.tight-heading {
+  margin-top: -35px; 
+}
 
     nav#navbar {
-      position: sticky;
-      top: 0;
-      background-color: #ffffff;
-      padding: 20px 0;
-      z-index: 1000;
-      transition: transform 0.3s ease;
-    }
+	position: sticky;
+	top: 0;
+  background-color: #ffffff;
+  padding: 10px 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+nav#navbar.hide {
+  transform: translateY(-100%);
+}
 
-    nav#navbar.hide {
-      transform: translateY(-100%);
-    }
+nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
 
-    nav a {
-      color: black;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: black;
-      text-decoration: underline;
-    }
+nav a:hover {
+  color: black;
+  text-decoration: underline;
+}
 
     .container {
       max-width: 900px;
@@ -129,30 +127,9 @@
       margin: 0 auto 10px;
     }
 
-    hr.section-divider {
-      border: none;
-      border-top: 1.5px solid #ccc;
-      width: 80%;
-      max-width: 600px;
-      margin: 60px auto;
-    }
-
-    footer {
-      background-color: #ffffff;
-      color: #888;
-      font-size: 0.7rem;
-      padding: 0px;
-      text-align: center;
-    }
-
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
-      }
-
-      .skills-wrapper {
-        flex-direction: column;
-        align-items: center;
       }
 
       nav a {
@@ -168,17 +145,79 @@
         padding: 30px 15px;
       }
     }
+	
+	footer {
+  background-color: #ffffff;
+  color: #888;
+  font-size: 0.7rem;
+  padding: 0px;
+  text-align: center;
+  }
+  
+  hr.section-divider {
+  border: none;
+  border-top: 1.5px solid #ccc;
+  width: 80%;         /* consistent, not too wide */
+  max-width: 600px;   /* restricts width on very large screens */
+  margin: 60px auto;  /* vertically spaced and centered */
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+
+.skills-wrapper > div {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: left;
+}
+
+.skills-wrapper h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.skills-wrapper ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Mobile alignment fix */
+@media (max-width: 600px) {
+  .skills-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-wrapper > div {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+
   </style>
 </head>
 <body>
 
   <header>
-    <h1>TAIN</h1>
-    <h1 class="tight-heading">REID</h1>
-    <p>Sound Design Portfolio</p>
+  <h1>TAIN</h1>
+  <h1 class="tight-heading">REID</h1>
+  <p>Sound Design Portfolio</p>
   </header>
 
-  <nav id="navbar">
+	<nav id="navbar">
     <a href="#home">About</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#skills">Skills</a>
@@ -193,10 +232,10 @@
       <p>I'm currently studying Sound Design at Edinburgh Napier University, where I continue to expand my technical skills and creative approach. I have a deep passion for music and sound, and I love exploring how audio can shape and elevate storytelling.</p>
       <p>Whether it's designing soundscapes, editing dialogue, or bringing scenes to life through Foley, I aim to create immersive audio experiences for audiences.</p>
     </section>
+	
+	<hr class="section-divider">
 
-    <hr class="section-divider">
-
-   <section class="projects" id="portfolio">
+    <section class="projects" id="portfolio">
       <h2>Film Sound Design</h2>
 	  
 	  <div class="video-block">
@@ -276,72 +315,79 @@
     </section>
   </div>
   
-  
   <hr class="section-divider">
-  
-    <!-- Skills section -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-wrapper" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; margin-top: 30px; text-align: left;">
-        <div>
-          <h3>Knowledge</h3>
-          <ul>
-            <li>Pro Tools</li>
-            <li>Reaper</li>
-            <li>Wwise</li>
-            <li>Ableton</li>
-            <li>Unity</li>
-            <li>iZotope</li>
-            <li>MS Office (Excel, Word, PowerPoint)</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Skills</h3>
-          <ul>
-            <li>Sound Design</li>
-            <li>Audio Editing</li>
-            <li>Re-Recording Mixing</li>
-            <li>Game Audio Implementation</li>
-            <li>Field Recording</li>
-            <li>Foley Artist</li>
-            <li>ADR</li>
-          </ul>
-        </div>
-      </div>
+
     </section>
 
-    <hr class="section-divider">
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-wrapper">
+    
+    <div>
+      <h3>Knowledge</h3>
+      <ul>
+        <li>Pro Tools</li>
+        <li>Reaper</li>
+        <li>Wwise</li>
+        <li>Ableton</li>
+        <li>Unity</li>
+        <li>iZotope</li>
+        <li>MS Office (Excel, Word, PowerPoint)</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Skills</h3>
+      <ul>
+        <li>Sound Design</li>
+        <li>Audio Editing</li>
+        <li>Re-Recording Mixing</li>
+        <li>Game Audio Implementation</li>
+        <li>Field Recording</li>
+        <li>Foley Artist</li>
+        <li>ADR</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
 
     <section id="info">
       <h2>Contact / Info</h2>
       <p>Email: <a href="mailto:tainreid@gmail.com">tainreid@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/tain-reid-a69273220" target="_blank">www.linkedin.com/in/tain-reid-a69273220</a></p>
+	  <p>LinkedIn: 
+  <a href="https://www.linkedin.com/in/tain-reid-a69273220" target="_blank">
+    www.linkedin.com/in/tain-reid-a69273220
+  </a>
       <p>Location: West Lothian, Scotland</p>
       <p>Available for freelance and collaborative projects.</p>
     </section>
-
   </div>
 
-  <footer>
-    <p>© 2025, Tain Reid Sound Design Portfolio</p>
-  </footer>
+<footer>
+  <p>© 2025, Tain Reid Sound Design Portfolio</p>
+</footer>
 
-  <script>
-    let lastScrollTop = 0;
-    const navbar = document.getElementById("navbar");
 
-    window.addEventListener("scroll", function () {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+<script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
 
-      if (currentScroll > lastScrollTop) {
-        navbar.classList.add("hide");
-      } else {
-        navbar.classList.remove("hide");
-      }
+  window.addEventListener("scroll", function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
-  </script>
+    if (currentScroll > lastScrollTop) {
+      navbar.classList.add("hide");
+    } else {
+      navbar.classList.remove("hide");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+</script>
+
 
 </body>
 </html>
